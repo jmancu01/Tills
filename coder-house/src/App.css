@@ -17,6 +17,7 @@
   flex-direction: row-reverse; 
   height: 5em;
   width: 100%;
+  border-bottom: black;
 }
 
 .navBar li{
@@ -25,10 +26,11 @@
   margin: 0.5em;
   font-size: 1.2em;
   font-family: 'RocknRoll One', sans-serif;
-  
+  text-align: left;
 }
 .navBar li a{
-  color: aliceblue;
+  color: aliceblue; 
+  text-decoration: none;
 }
 .navBar li :hover{
   color: burlywood;
