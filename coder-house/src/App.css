@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
   min-height: 100vh;
+  background-image: url("./imagenes/mountains.png");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:whitesmoke;
+}
+
+.navBar{
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.301);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; 
+  height: 5em;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.navBar li{
+  text-decoration: none;
+  padding: 1em;
+  margin: 0.5em;
+  font-size: 1.2em;
+  font-family: 'RocknRoll One', sans-serif;
+  
+}
+.navBar li a{
+  color: aliceblue;
+}
+.navBar li :hover{
+  color: burlywood;
+}
+img{
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width : 960px) {
+.navBar{
+  flex-direction: column-reverse; 
+  height:max-content;
+}
+.navBar img{
+height: 100px;
+width: 300px;
+}
 }
