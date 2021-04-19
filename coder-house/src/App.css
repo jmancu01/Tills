@@ -10,45 +10,58 @@
 
 .navBar{
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.301);
+  background-color: rgba(252, 252, 252, 0.719);
   display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  flex-direction: row-reverse; 
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; 
   height: 5em;
   width: 100%;
   border-bottom: black;
+
+  
+}
+.links{
+  float: right;
+
+  align-items: center;
+  object-fit: cover;
 }
 
-.navBar li{
+.links ul{
+  list-style-type: none;
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.links ul li{
   text-decoration: none;
-  padding: 1em;
-  margin: 0.5em;
-  font-size: 1.2em;
+  padding: 1em; 
+  font-size: 1.4em;
   font-family: 'RocknRoll One', sans-serif;
-  text-align: left;
+  
 }
 .navBar li a{
-  color: aliceblue; 
+  color: rgb(0, 0, 0); 
   text-decoration: none;
 }
 .navBar li :hover{
-  color: burlywood;
+  color: rgb(0, 0, 0);
 }
 img{
   height: 100%;
   object-fit: cover;
   object-position: center left;
-
 }
 
 @media only screen and (max-width : 960px) {
 .navBar{
-  flex-direction: column-reverse; 
+  flex-direction: column; 
   height:max-content;
 }
 .navBar img{
-height: 100px;
-width: 300px;
-}
-}
+  height: 100px;
+  width: 300px;
+}}
