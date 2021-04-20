@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaBeer } from 'react-icons/fa';
 import './CartWidget.css';
 
 function CartWidget (props) {

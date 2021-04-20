@@ -1,14 +1,11 @@
 import '../App.css'
-import React from 'react';
+import  {React, useState} from 'react';
 import logo from '../imagenes/logo.png'
 import CartWidget from './CartWidget'
 
 function NavBar() {
 
-    const USER = {
-        name: 'Juan Mancuso',
-        number: '2'
-    }
+    const [user, SetUser] =  useState({user: 'Juan', number: '0'})
 
     return (
 
@@ -25,7 +22,7 @@ function NavBar() {
                     </ul>    
                 </nav>
                             
-                <CartWidget user={USER}/>
+                <CartWidget user={user}/>
             </nav>
         </div>
     );
