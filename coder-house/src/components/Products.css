@@ -1,0 +1,22 @@
+.Products{
+    display: inline-block;
+    margin: auto;
+    padding: auto;
+    align-items: center;
+}
+
+.ProductContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    width: 350px;
+    flex-direction: row;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #b6b6b6f8;
+}
+.InfoContainer{
+    padding: 0.5em;
+    font-family: 'RocknRoll One', sans-serif;
+}

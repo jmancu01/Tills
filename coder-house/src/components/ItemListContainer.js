@@ -8,6 +8,7 @@ const ItemListContainer = (props) => {
             title = {products.title}
             price={products.price}
             description = {products.description}
+            image= {products.image}
         />
     )
     )
