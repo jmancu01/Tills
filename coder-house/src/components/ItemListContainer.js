@@ -9,6 +9,8 @@ const ItemListContainer = (props) => {
             price={products.price}
             description = {products.description}
             image= {products.image}
+            counter= {products.counter}
+            stock = {products.stock}
         />
     )
     )

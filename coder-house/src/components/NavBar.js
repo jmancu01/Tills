@@ -3,9 +3,9 @@ import  {React, useState} from 'react';
 import logo from '../imagenes/logo.png'
 import CartWidget from './CartWidget'
 
-function NavBar() {
+function NavBar(props) {
 
-    const [user, SetUser] =  useState({user: 'Juan', number: '0'})
+    
 
     return (
 
@@ -22,7 +22,7 @@ function NavBar() {
                     </ul>    
                 </nav>
                             
-                <CartWidget user={user}/>
+                <CartWidget totalCounter = {props.totalCounter}/>
             </nav>
         </div>
     );
