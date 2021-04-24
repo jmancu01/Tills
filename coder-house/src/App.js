@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import Banner from './components/Banner.js';
 import ItemListContainer from './components/ItemListContainer.js';
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 
 function App() {
 

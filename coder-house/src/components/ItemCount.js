@@ -7,10 +7,12 @@ function ItemCount (props){
     const[stock, setStock] = useState(props.stock)
     const[sumar, setSumar] = useState(false)
     const[restar, setRestar] = useState(true)
+    const[addToCart, setAddToCart] = useState(false)
+
 
     const handleClick = async() => {
-        
-       
+        if(counter>0){ console.log('addToCart ')}
+      
     }
 
     const sumando = async() => {
@@ -28,6 +30,7 @@ function ItemCount (props){
             setRestar(false)
         } else{
             setCounter(counter-1)
+            setStock(stock+1)
         }
        
     }
@@ -35,11 +38,28 @@ function ItemCount (props){
     return (
 
         <div className = 'counterContainer'>
-            <button className='addToCart' onClick={restando} disabled = {restar}>-</button>
-            <h5 className='counter'>{counter}</h5>
-            <button className='addToCart' onClick={sumando} disabled = {sumar}>+</button>
+            <button 
+                className='addToCart' 
+                onClick={restando} 
+                disabled = {restar}>
+                -
+            </button>
+            <h5 className='counter'>
+                {counter}
+            </h5>
+            <button 
+                className='addToCart'
+                onClick={sumando} 
+                disabled = {sumar}>
+                +
+            </button>
             <div>
-                <button className='addToCart' onClick={handleClick}>Add to Cart</button>
+                <button 
+                    className='addToCart' 
+                    onClick={handleClick} 
+                    disabled = {addToCart}>
+                    Add to Cart
+                </button>
             </div>
            
         </div>

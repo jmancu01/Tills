@@ -1,17 +1,9 @@
-import React, { Component, useState } from 'react'
+
 import './Products.css'
 import ItemCount from './ItemCount.js'
 
 function Products (props){
-
-    const[counter, setCounter] = useState(props.counter)
-
-    const handleClick = async() => {
-        console.log(counter)
-        setCounter(counter+1)
-        
-    }
-
+  
     return (
         <div className = 'Products'>
             <div className= 'ProductContainer'>
