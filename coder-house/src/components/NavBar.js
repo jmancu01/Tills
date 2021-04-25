@@ -5,10 +5,7 @@ import CartWidget from './CartWidget'
 
 function NavBar(props) {
 
-    
-
-    return (
-
+       return (
 
         <div>             
             <nav className='navBar'>
@@ -16,8 +13,8 @@ function NavBar(props) {
                 <nav className='links'>
                     <ul>
                         <li><a href=''>Inicio</a></li>   
-                        <li><a href='Contacto'>Contacto</a></li> 
-                        <li><a href='Productos'>Productos</a></li>                     
+                        <li><a href='Contact'>Contacto</a></li> 
+                        <li><a href='Products'>Productos</a></li>                     
                         <li><a href='Sobre Nosotros'>Sobre Nosotros</a></li>
                     </ul>    
                 </nav>

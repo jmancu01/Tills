@@ -5,8 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000f8;
-    border-radius: 5px
+    background: rgb(226, 225, 225);
+    border: 2px solid #4d4f5017;
+    border-radius: 6px;
+    border-bottom: none;
+    background: -webkit-linear-gradient(rgb(226, 225, 225), rgba(214, 214, 214, 0.9));
 }
 .icon{
     position: relative;
@@ -23,6 +26,7 @@
 
 @media only screen and (max-width : 960px) {
     .cart{
-        display: none;
+        height: fit-content;
+        width: 200px;
     }
     }

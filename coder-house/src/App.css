@@ -6,6 +6,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-color:whitesmoke;
+
 }
 
 .navBar{
@@ -17,8 +18,8 @@
   flex-direction: row; 
   height: 5em;
   width: 100%;
-  border-bottom: black;
-
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.267), rgba(214, 214, 214, 0.26));
+ 
   
 }
 .links{
@@ -37,23 +38,33 @@
   justify-content: center;
 }
 .links ul li{
+  z-index: 110;
   text-decoration: none;
-  padding: 1em; 
+  padding: 0.65em; 
+  margin: 0.2em;
   font-size: 1.4em;
   font-family: 'RocknRoll One', sans-serif;
+  border: 2px solid #4d4f5017;
+  border-radius: 6px;
+  border-bottom: none;
+  background: -webkit-linear-gradient(rgb(226, 225, 225), rgba(214, 214, 214, 0.9));
   
 }
-.navBar li a{
-  color: rgb(0, 0, 0); 
+.navBar ul  a{
+  color: rgb(26, 17, 4); 
   text-decoration: none;
+  
 }
 .navBar li :hover{
-  color: rgb(0, 0, 0);
+  color: rgb(3, 94, 94);
 }
 img{
   height: 100%;
   object-fit: cover;
   object-position: center left;
+}
+.carousel{
+  margin-top: 0.5em;
 }
 
 @media only screen and (max-width : 960px) {

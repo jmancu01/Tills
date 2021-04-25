@@ -15,7 +15,7 @@ class Banner extends Component {
   render () {
     const { items } = this.state;
     return (
-      <Carousel>
+      <Carousel className = 'carousel'>
         {items.map(item => <div key={item.id}><img src={item.url} alt='imagen'></img></div>)}
       </Carousel>
     )

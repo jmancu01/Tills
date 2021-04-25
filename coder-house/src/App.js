@@ -2,7 +2,8 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import Banner from './components/Banner.js';
 import ItemListContainer from './components/ItemListContainer.js';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
 
@@ -38,9 +39,19 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar totalCounter = {totalCounter}/>
-      <Banner/>
-      <ItemListContainer products = {products}/>
+      <Switch>
+        <Route exact path ='/'>
+          <NavBar totalCounter = {totalCounter}/>
+          <Banner/>
+          <ItemListContainer products = {products}/>
+        </Route>
+        <Route exact path ='/Products'>
+          <NavBar totalCounter = {totalCounter}/>
+          
+          
+        </Route>
+      </Switch>
+      
     </div>
   );
 }
