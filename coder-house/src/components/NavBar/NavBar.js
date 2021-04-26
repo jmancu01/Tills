@@ -1,6 +1,6 @@
-import '../App.css'
+import './NavBar.css'
 import  {React } from 'react';
-import logo from '../imagenes/logo.png'
+import logo from '../../imagenes/logo.png'
 import CartWidget from './CartWidget'
 
 function NavBar(props) {
@@ -9,7 +9,7 @@ function NavBar(props) {
 
         <div>             
             <nav className='navBar'>
-                <img src={logo}/>   
+                <img src={logo} className='logo'/>   
                 <nav className='links'>
                     <ul>
                         <li><a href=''>Inicio</a></li>   
@@ -19,7 +19,7 @@ function NavBar(props) {
                     </ul>    
                 </nav>
                             
-                <CartWidget totalCounter = {props.totalCounter}/>
+                <CartWidget className='icon' totalCounter = {props.totalCounter}/>
             </nav>
         </div>
     );

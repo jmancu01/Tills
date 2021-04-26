@@ -19,7 +19,7 @@
     
 }
 .cart-quantity{
-    padding-right: 1em;
+    padding-right: 1.5em;
     font-size: 1.4em;
     font-family: 'RocknRoll One', sans-serif;
 }
@@ -27,6 +27,10 @@
 @media only screen and (max-width : 960px) {
     .cart{
         height: fit-content;
-        width: 200px;
+        width: 80px;
     }
+    .icon{
+        padding-left: 1.2em;
+    }
+    
     }

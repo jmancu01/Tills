@@ -1,7 +1,8 @@
 import './App.css';
-import NavBar from './components/NavBar.js';
+import NavBar from './components/NavBar/NavBar.js';
 import Banner from './components/Banner.js';
-import ItemListContainer from './components/ItemListContainer.js';
+import AllProducts from './components/Products/AllProducts'
+import ItemListContainer from './components/Products/ItemListContainer.js';
 import React, { useState } from 'react';
 import {Switch, Route} from 'react-router-dom';
 
@@ -47,7 +48,7 @@ function App() {
         </Route>
         <Route exact path ='/Products'>
           <NavBar totalCounter = {totalCounter}/>
-          
+          <AllProducts/>
           
         </Route>
       </Switch>
