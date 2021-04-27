@@ -2,7 +2,7 @@
 .App{
   min-height: 100vh;
   background-image: url("./imagenes/mountains.png");
-  background-position: center center;
+ 
   background-attachment: fixed;
   background-size: cover;
   background-color:whitesmoke;

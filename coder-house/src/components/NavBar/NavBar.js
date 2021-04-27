@@ -9,10 +9,10 @@ function NavBar(props) {
 
         <div>             
             <nav className='navBar'>
-                <img src={logo} className='logo'/>   
+                <img alt='TillsLogo'src={logo} className='logo'/>   
                 <nav className='links'>
                     <ul>
-                        <li><a href=''>Inicio</a></li>   
+                        <li><a href='../'>Inicio</a></li>   
                         <li><a href='Contact'>Contacto</a></li> 
                         <li><a href='Products'>Productos</a></li>                     
                         <li><a href='Sobre Nosotros'>Sobre Nosotros</a></li>

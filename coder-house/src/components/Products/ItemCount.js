@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import './Products.css'
 
 function ItemCount (props){
@@ -26,7 +26,7 @@ function ItemCount (props){
        
     }
     const restando = async() => {
-        if(counter == 0){
+        if(counter === 0){
             setRestar(false)
         } else{
             setCounter(counter-1)

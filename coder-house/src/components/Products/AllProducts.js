@@ -1,39 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from './ProductList.js'
 import SearchBar from './SearchBar.js'
+import axios from 'axios';
 
 function AllProducts () {
    
     const [input, setInput] = useState('');
     const [productListDefault, setProductListDefault] = useState();
-    const [productList, setProductList] = useState();
+    const [productList, setProductList] = useState([]);
+    
   
-    const fetchData = async () => {
-      return await fetch('https://random-data-api.com/api/crypto_coin/random_crypto_coin')
-        .then(response => response.json())
-        .then(data => {
-           setProductList(data) 
-           setProductListDefault(data)
-         });}
+    useEffect(() => {
+
+      const getProduct = async() =>{
+        const {response} = await axios.get("http://localhost:5000/api/products"); 
+        
+        const products = await response;
   
-    const updateInput = async (input) => {
-       const filtered = productListDefault.filter(product => {
-        return product.coin_name.toLowerCase().includes(input.toLowerCase())
-       })
-       setInput(input);
-       setProductList(filtered);
-    }
-  
-    useEffect( () => {fetchData()},[]);
+        console.log(products);
+
+        setProductList(products.data)
+        }
+
+      getProduct();
+
+      }, []);
+      console.log(productList)
+
+
+
 
     return (
         <div className = 'AllProducts'>
             <h1>Product List</h1>
-            <SearchBar 
+            {/* <SearchBar 
             input={input} 
             onChange={updateInput}
             />
-            <ProductList productList={productList}/>
+            <ProductList productList={productList}/> */}
+            { 
+                productList.lenght < 1
+                ? <p> no tengo productos </p> 
+                : productList.map(
+                  (product) => <p> {product.title} </p>
+                  
+                )
+            }
 
         </div>
     );

@@ -11,7 +11,7 @@ function Products (props){
     }
     let infoContainer 
 
-    if(info == false){
+    if(info === false){
         infoContainer = 'InfoContainer'
     } else{
         infoContainer = 'InfoContainershow'
@@ -20,7 +20,7 @@ function Products (props){
     return (
         <div className = 'Products'>
             <div className= 'ProductContainer'>
-                <img src= {props.image} className ='imgProduct' onClick={handleClick}/>
+                <img alt= {props.title} src= {props.image} className ='imgProduct' onClick={handleClick}/>
                 <div className = {infoContainer} >
                     <h3>{props.title}</h3>
                     <h4>{props.price}</h4>
