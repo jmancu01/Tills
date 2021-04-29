@@ -1,26 +1,15 @@
-.ItemListContainer{
-    align-items: center;
-    justify-content: center;
-}
-
-.Products{
-    display: inline-block;
-    margin: auto;
-    padding: auto;
-   
-}
 
 .ProductContainer{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    width: 320px;
+    
     flex-direction: row;
     padding: 1em;
-    margin: 1em;
-    
+    margin: 2em; 
 }
+
+
 .InfoContainer{
     display: none;
     padding: 0.5em;
@@ -29,12 +18,11 @@
     background: rgba(255, 255, 255, 0.426);
     border: 2px solid #4ba3c0;
     border-radius: 6px;
-    margin: 0em 0.5em ;
+    margin: 0.5em 0.5em ;
     align-items: center;
     justify-content: center;  
 }
-.InfoContainershow{
-    
+.InfoContainershow{   
     padding: 0.5em;
     font-family: 'RocknRoll One', sans-serif;
     color: black;
@@ -46,7 +34,7 @@
     justify-content: center;  
 }
 .imgProduct{
-    width: 100%;
+    width: 20%;
     height: auto;
 }
 .counterContainer{
@@ -60,22 +48,4 @@
     border-bottom: black;
     border: 2px solid #0099CC;
     border-radius: 6px;
-}
-.counter{
-    display: flex;
-    flex-direction: row; 
-    
-    align-items: center;
-    justify-content: center;
-    margin:  0.3em 0.2em;
-}
-
-.addToCart{
-    color: #0099CC;
-    background: transparent;
-    border: 2px solid #0099CC;
-    border-radius: 6px;
-    margin: 0em 0.5em ;
-    align-items: center;
-    justify-content: center;
 }

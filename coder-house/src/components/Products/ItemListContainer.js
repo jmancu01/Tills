@@ -1,16 +1,38 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import Products from './Products.js';
-import './Products.css'
+import './Products.css';
+import axios from 'axios';
+
 
 const ItemListContainer = (props) => {
-    return props.products.map((products) => (
+    
+
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+
+        const getProduct = async() =>{
+
+            const response = await axios.get("/api/products"); 
+    
+            setProductList(response.data.data )
+            console.log(response.data.data)
+        }
+
+        getProduct();
+
+    }, []);
+    
+
+    return productList.map((productList) => (
         <Products className= 'ItemListContainer'
-            title = {products.title}
-            price={products.price}
-            description = {products.description}
-            image= {products.image}
-            counter= {products.counter}
-            stock = {products.stock}
+            id = {productList.id}
+            title = {productList.title}
+            price={productList.price}
+            description = {productList.description}
+            image= {productList.image}
+            counter= {productList.counter}
+            stock = {productList.stock}
         />
     )
     )
