@@ -6,7 +6,6 @@ import axios from 'axios';
 
 const ItemListContainer = (props) => {
     
-
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
@@ -22,6 +21,7 @@ const ItemListContainer = (props) => {
         getProduct();
 
     }, []);
+    console.log(productList)
     
 
     return productList.map((productList) => (

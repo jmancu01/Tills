@@ -1,13 +1,10 @@
 import { React, useState, useEffect } from 'react';
-import Products from './Products.js';
 import './Products.css';
-import axios from 'axios';
-import ItemCount from './ItemCount.js'
+import { useParams } from 'react-router';
 
-function ItemDetail(props) {
+function ItemDetail() {
     
-    
-    let id = props.match.params.id;
+    let id = useParams()
 
     const [product, setProduct] = useState([]);
 
@@ -15,29 +12,23 @@ function ItemDetail(props) {
 
         const getProduct = async() =>{
 
-            const response = await axios.get('/api/products'); 
-    
-            setProduct(response.data.data )
-            console.log(response.data.data)
+            const response = await fetch('http://localhost:5000/api/products'); 
+            const user = await response.json()
+            setProduct(user.data)
+            console.log(user.data)
         }
 
         getProduct();
 
     }, []);
+    console.log(id)
     
 
     return (
         <div>
             {product ? (
                 <div>
-                  <img alt= {product.title} src= {product.image} className ='imgProduct'/>
-                    
-                    <div className = 'InfoContainer' >
-                    <h3>{product.title}</h3>
-                    <h4>{product.price}</h4>
-                    <h4>{product.description}</h4>
-                    <ItemCount counter = {product.counter} stock ={product.stock}/>
-                    </div>
+                  
                 </div>
             ) : (
                 <h1>Trayendo info</h1>

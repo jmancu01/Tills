@@ -1,8 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import Banner from './components/Banner.js';
-
-import Products from './components/Products/Products'
 import ItemListContainer from './components/Products/ItemListContainer.js';
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
