@@ -5,6 +5,7 @@ import ItemListContainer from './components/Products/ItemListContainer.js';
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import ItemDetail from './components/Products/ItemDetail';
+import AllProducts from './components/Products/AllProducts';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         </Route>
         <Route exact path ='/Products'>
           <NavBar/>
-          <ItemListContainer/>
+          <AllProducts/>
+
           
         </Route>
         <Route exact path ='/Products/:id'>

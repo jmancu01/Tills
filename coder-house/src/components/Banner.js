@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'react-elastic-carousel';
+import '../App.css'
+
 
 class Banner extends Component {
   state = {

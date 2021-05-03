@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Products.css'
+import './ItemCount.css'
 
 function ItemCount (props){
 

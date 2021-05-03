@@ -24,17 +24,24 @@ const ItemListContainer = (props) => {
     console.log(productList)
     
 
-    return productList.map((productList) => (
-        <Products className= 'ItemListContainer'
-            id = {productList.id}
-            title = {productList.title}
-            price={productList.price}
-            description = {productList.description}
-            image= {productList.image}
-            counter= {productList.counter}
-            stock = {productList.stock}
-        />
-    )
-    )
+    return(
+        <div className = 'ListContainer'>
+
+            {productList.map((productList) => (
+            <Products 
+                id = {productList.id}
+                title = {productList.title}
+                price={productList.price}
+                description = {productList.description}
+                image= {productList.image}
+                counter= {productList.counter}
+                stock = {productList.stock}
+            />
+        )
+        )
+            }
+        </div>
+       
+    ) 
 }
 export default ItemListContainer

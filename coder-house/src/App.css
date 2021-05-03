@@ -1,11 +1,11 @@
 
 .App{
   min-height: 100vh;
-  background-image: url("./imagenes/mountains.png");
+  /* background-image: url("./imagenes/mountains.png"); */
  
   background-attachment: fixed;
   background-size: cover;
-  background-color:whitesmoke;
+  background-color:#FFFFFF;
   box-sizing: border-box;
 }
 

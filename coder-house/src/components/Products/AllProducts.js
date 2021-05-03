@@ -1,66 +1,57 @@
-// import React, { useState, useEffect } from 'react';
-// import ProductList from './ProductList.js'
-// import SearchBar from './SearchBar.js'
-// import axios from 'axios';
-// import './ItemProduct.css';
+import { React, useState, useEffect } from 'react';
+import Products from './Products.js';
+import './Products.css';
+import axios from 'axios';
+import SearchBar from './SearchBar.js'
 
-// function AllProducts () {
- 
-// const [input, setInput] = useState('');
-// const [productListDefault, setProductListDefault] = useState();
-// const [productList, setProductList] = useState([]);
 
-// useEffect(() => {
-//           const getProduct = async() =>{
+const AllProducts = (props) => {
+    
+    const [productList, setProductList] = useState([]);
+    const [input, setInput] = useState('');
+  
 
-//             const response = await axios.get("/api/products"); 
-      
-//             setProductList(response.data.data )
+    useEffect(() => {
 
-//             }
+        const getProduct = async() =>{
 
-//           getProduct();
+            const response = await axios.get("/api/products"); 
+    
+            setProductList(response.data.data )
+            console.log(response.data.data)
+        }
 
-//           }, []);
-      
-//           const[info, setInfo] = useState(false)
-//           const handleClick = async() => {
-//               setInfo(!info)
-//           }
-//           let infoContainer 
-//           if(info === false){
-//               infoContainer = 'InfoContainer'
-//           } else{
-//               infoContainer = 'InfoContainershow'
-//           }
+        getProduct();
 
-// return (
-//       <div className = 'AllProducts'>
-//         <h1>Product List</h1>
-//         {/* <SearchBar 
-//         input={input} 
-//         onChange={updateInput}
-//         />
-//         <ProductList productList={productList}/> */}
-//         { 
-//             productList.lenght < 1
-//             ? <p> no tengo productos </p> 
-//             : productList.map(
-//               (product) => 
-//               <div className= 'ProductContainer'>
-//                   <img alt= {product.title} src= {product.image} className ='imgProduct' onClick={handleClick}/>
-//                   <div className = {infoContainer} >
-//                       <h3>{product.title}</h3>
-//                       <h4>{product.price}</h4>
-                      
-//                   </div>
-//               </div>
-                   
-//       )
-//       }
-//     </div>
-// );
-   
-// }
+    }, []);
+    console.log(productList)
+    
+    const updateInput = async(text) => {
+        console.log(input)
+        setInput(text)
+    }
 
-// export default AllProducts;
+    return (
+        <div>
+            <SearchBar 
+            input={input} 
+            onChange={updateInput}
+            />
+            {productList.map((productList) => (
+            <Products className= 'ItemListContainer'
+                id = {productList.id}
+                title = {productList.title}
+                price={productList.price}
+                description = {productList.description}
+                image= {productList.image}
+                counter= {productList.counter}
+                stock = {productList.stock}    
+            />
+            ))}
+        </div>
+        
+    )
+  
+}
+
+export default AllProducts;

@@ -1,13 +1,13 @@
 .navBar{
     z-index: 100;
-    background-color: rgba(252, 252, 252, 0.719);
+    background-color:whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; 
     height: 5em;
     width: 100%;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.267), rgba(214, 214, 214, 0.26));
+    /* background: -webkit-linear-gradient(rgba(0, 0, 0, 0.267), rgba(214, 214, 214, 0.26)); */
     
     
   }
@@ -15,6 +15,7 @@
     
     align-items: center;
     object-fit: cover;
+   
   }
   
   .links ul{
@@ -22,27 +23,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+   
   }
   .links ul li{
     z-index: 110;
     text-decoration: none;
-    padding: 0.65em; 
+    padding: 0.5em; 
     margin: 0.2em;
     font-size: 1.4em;
-    font-family: 'RocknRoll One', sans-serif;
+    font-family: "Open Sans", sans-serif;
     border: 2px solid #4d4f5017;
     border-radius: 6px;
-    border-bottom: none;
-    background: -webkit-linear-gradient(rgb(226, 225, 225), rgba(214, 214, 214, 0.9));
+   
+    background-color: white;
+   
     
   }
   .navBar ul  a{
     color: rgb(26, 17, 4); 
     text-decoration: none;
-    
+ 
   }
   .navBar li :hover{
     color: rgb(3, 94, 94);
+    
   }
   img{
     height: 100%;
@@ -61,7 +65,7 @@
   
   } 
   .navBar .icon{
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
   }}
   
