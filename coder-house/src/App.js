@@ -23,7 +23,7 @@ function App() {
           
         </Route>
         <Route exact path ='/Products/:id'>
-          
+          <NavBar/>
           <ItemDetail/>
           
         </Route>
