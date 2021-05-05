@@ -55,6 +55,7 @@
   }
 
   @media only screen and (max-width : 960px) {
+    
   .navBar{
     flex-direction: column; 
     height:max-content;

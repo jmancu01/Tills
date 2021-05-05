@@ -6,6 +6,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import ItemDetail from './components/Products/ItemDetail';
 import AllProducts from './components/Products/AllProducts';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <NavBar/>
           <Banner/>
           <ItemListContainer/>
+          <Footer/>
         </Route>
         <Route exact path ='/Products'>
           <NavBar/>

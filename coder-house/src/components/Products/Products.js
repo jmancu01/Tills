@@ -12,7 +12,7 @@ function Products (props){
                 <Link to ={`/Products/${props.id}`} className = 'Products'>
                     <img alt= {props.title} src= {props.image} className ='imgProduct'/>
                 </Link>
-                <h3>{props.price}</h3>
+                <h3> ${props.price}</h3>
             </div>  
         </div>
             

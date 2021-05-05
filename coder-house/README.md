@@ -1,10 +1,10 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Es mi proyecto de venta de Ropa para Hombre, todavia tiene un servidor que usa fotos sin derechos de autor pero ya se podra remplazar por fotos propias
 
-## Available Scripts
 
-In the project directory, you can run:
+
+
+
 
 ### `npm start`
 

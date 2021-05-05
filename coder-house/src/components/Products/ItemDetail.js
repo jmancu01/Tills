@@ -33,7 +33,7 @@ function ItemDetail() {
                     <img alt= {product[id].title} src= {product[id].image} className ='imgProduct'/>
                     <div className ='descriptionContainer'>
                         <h3>{product[id].title}</h3>
-                        <h4>{product[id].price}</h4>
+                        <h4>${product[id].price}</h4>
                         <h4>{product[id].description}</h4>
                         <ItemCount counter = {product[id].counter} stock ={product[id].stock}/>   
                     </div>

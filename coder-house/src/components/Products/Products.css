@@ -2,19 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .Products{
-    flex: 0 1 25rem;
+    flex: 0 1 20rem;
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 5px;
 }
 
 .ProductContainer{
    
     background-color: #FFFFFF;
+   
     box-shadow: 2px 2px 2px #888888;
 }
 .Products .imgProduct{
@@ -30,7 +33,7 @@
 
 }
 
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width : 700px) {
     
     .ListContainer{
         display: flex;
