@@ -1,31 +1,31 @@
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Products from './Products.js';
 import './Products.css';
-import axios from 'axios';
 import SearchBar from './SearchBar.js'
-
+import { getFireStore } from '../../FireBase/index.js';
 
 const AllProducts = () => {
     
     const [productList, setProductList] = useState([]);
+    // const [isEmpty,  setIsEmpty] = useState(false)
     const [filteredProductList, setFilteredProductList] = useState([]);
     const [input, setInput] = useState('');
   
 
     // recibir informacion del backend
     useEffect(() => {
+        const db = getFireStore()
+        const itemCollection = db.collection('items')
 
-        const getProduct = async() =>{
-
-            const response = await axios.get("/api/products"); 
-            
-            setProductList(response.data.data)
-            setFilteredProductList(response.data.data )
-            console.log(response.data.data)
-        }
-
-        getProduct();
-
+        itemCollection.get().then(
+            (querySnapshot) => {
+                
+                setProductList(querySnapshot.docs.map((doc) => doc.data() ))
+                setFilteredProductList(querySnapshot.docs.map((doc) => doc.data() ))
+                console.log(productList)
+            } 
+        ).catch((e)=> console.error('firestone ', e))
+       
     }, []);
     
     //Search bar function
@@ -36,7 +36,7 @@ const AllProducts = () => {
         })
         setInput(input.target.value)
         setFilteredProductList(filtered);
-        console.log(filteredProductList)
+       console.log(filteredProductList)
      }
 
     return (
@@ -47,8 +47,10 @@ const AllProducts = () => {
             />
             
             <div className = 'ListContainer'>
-                {filteredProductList.map((productList) => (
+                {
+                filteredProductList.map((productList) => (
                 <Products 
+                    key = {productList.id}
                     id = {productList.id}
                     title = {productList.title}
                     price={productList.price}

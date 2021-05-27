@@ -1,38 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext} from 'react'
+import { CartContext } from '../../context/CartContext'
 import './ItemCount.css'
 
 function ItemCount (props){
-
+    
     const[counter, setCounter] = useState(props.counter)
     const[stock, setStock] = useState(props.stock)
-    const[sumar, setSumar] = useState(false)
-    const[restar, setRestar] = useState(true)
-    const[addToCart, setAddToCart] = useState(false)
+    const cart = useContext(CartContext)
+   
+    //asignar props a los estados
+    useEffect(()=>{
+        setCounter(props.counter)
+        setStock(props.stock)
+    },[props.counter, props.stock])
 
-
-    const handleClick = async() => {
-        if(counter>0){ console.log('addToCart ')}
-      
-    }
-
+    //sumando
     const sumando = async() => {
-        if(stock >= 1){
-            setCounter(counter+1)
-            setStock(stock-1)
-            setRestar(false)
+        if(stock > counter){
+            setCounter(counter + 1)
+        } 
+       
+    }
+
+    //restando
+    const restando = async() => {
+        if(counter > 0){
+            setCounter(counter - 1)
         } else{
-            setSumar(false)
+             setCounter(0)
         }
        
     }
-    const restando = async() => {
-        if(counter === 0){
-            setRestar(false)
-        } else{
-            setCounter(counter-1)
-            setStock(stock+1)
+    
+    function onAdd(){
+
+        
+        if(counter > 0){
+            
+            cart.addToCart(props.product, counter)
+            console.log(counter)
+        }else{
+            console.log('error')
         }
-       
+        
     }
 
     return (
@@ -41,7 +51,7 @@ function ItemCount (props){
             <button 
                 className='addToCart' 
                 onClick={restando} 
-                disabled = {restar}>
+             >
                 -
             </button>
             <h5 className='counter'>
@@ -50,14 +60,14 @@ function ItemCount (props){
             <button 
                 className='addToCart'
                 onClick={sumando} 
-                disabled = {sumar}>
+              >
                 +
             </button>
             <div>
                 <button 
                     className='addToCart' 
-                    onClick={handleClick} 
-                    disabled = {addToCart}>
+                    onClick={onAdd} 
+                    >
                     Add to Cart
                 </button>
             </div>

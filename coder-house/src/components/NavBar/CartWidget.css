@@ -11,6 +11,13 @@
     border-bottom: none;
     background: -webkit-linear-gradient(rgb(226, 225, 225), rgba(214, 214, 214, 0.9));
 }
+.cart-link{
+    height: 70%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .icon{
     position: relative;
     margin: 1em;

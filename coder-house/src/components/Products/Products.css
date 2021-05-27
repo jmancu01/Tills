@@ -9,15 +9,15 @@
     flex: 0 1 20rem;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    
     padding: 5px;
 }
 
 .ProductContainer{
    
     background-color: #FFFFFF;
-   
+   display: flex;
+    flex-direction: column;
     box-shadow: 2px 2px 2px #888888;
 }
 .Products .imgProduct{

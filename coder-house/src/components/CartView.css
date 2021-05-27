@@ -1,0 +1,40 @@
+.CartContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin: 2em; 
+    background-color: #FFFFFF;
+    border: 1px solid #525252;
+}
+.img{
+    width: auto;
+    height: 200px;
+    margin-bottom: 0em;
+}
+.infoCartContainer{
+    align-items: center;
+    justify-content: center;
+    font-family: 'RocknRoll One', sans-serif;
+    color: black;
+    margin: 0em 0.5em;
+   
+ 
+}
+.button{
+    text-decoration: none;
+    
+    background-color: #FFFFFF;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    border: 2px solid #525252;
+    border-radius: 6px;
+    margin: 0em 40%  ;
+    padding: 0.5em;
+}
+.emptyContainer{
+    align-items: center;
+    justify-content: center;
+    padding: 0.2em;
+}
+
+

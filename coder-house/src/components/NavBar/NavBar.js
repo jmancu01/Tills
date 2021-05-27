@@ -1,25 +1,29 @@
 import './NavBar.css'
-import  {React } from 'react';
+import  React,{useContext} from 'react';
 import logo from '../../imagenes/logo.png'
 import CartWidget from './CartWidget'
+import { CartContext } from '../../context/CartContext.js';
+import {Link} from 'react-router-dom'
 
 function NavBar(props) {
 
-       return (
+        const productsCount = useContext(CartContext)
+
+        return (
 
         <div>             
             <nav className='navBar'>
                 <img alt='TillsLogo'src={logo} className='logo'/>   
                 <nav className='links'>
                     <ul>
-                        <li><a href='../'>Inicio</a></li>   
-                        <li><a href='Contact'>Contacto</a></li> 
-                        <li><a href='Products'>Productos</a></li>                     
-                        <li><a href='Sobre Nosotros'>Sobre Nosotros</a></li>
+                        <li><Link exact to = '/'>Inicio</Link></li>   
+                        <li><Link exact to = '/Contact'>Contacto</Link></li> 
+                        <li><Link exact to = '/Products'>Productos</Link></li>                     
+                        <li><Link exact to = '/About'>Sobre Nosotros</Link></li>
                     </ul>    
                 </nav>
                             
-                <CartWidget className='icon' totalCounter = {props.totalCounter}/>
+                <CartWidget className='icon' totalCounter = {productsCount}/>
             </nav>
         </div>
     );
