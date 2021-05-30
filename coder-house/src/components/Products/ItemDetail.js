@@ -1,8 +1,8 @@
-import React,{ useState, useEffect, useContext } from 'react';
-import './ItemDetail.css';
+import React,{ useState, useEffect} from 'react';
+import './ItemDetail.scss';
 import { useParams } from 'react-router';
 import ItemCount from './ItemCount.js'
-import {CartContext} from '../../context/CartContext'
+
 import {getFireStore} from '../../FireBase/index'
 
 function ItemDetail() {
@@ -32,7 +32,7 @@ function ItemDetail() {
     return (
         <div>
             {product[id] ? (
-                <div className='ProductContainer'> 
+                <div className='ProductsContainer'> 
                
                     <img alt= {product[id].title} src= {product[id].image} className ='imgProduct'/>
                     <div className ='descriptionContainer'>

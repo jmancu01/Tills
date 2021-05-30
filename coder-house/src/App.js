@@ -9,6 +9,7 @@ import AllProducts from './components/Products/AllProducts';
 import Footer from './components/Footer';
 import CartContextProvider from './context/CartContext.js'
 import Register from './components/Register';
+import Exit from './components/Exit'
 
 function App() {
 
@@ -45,6 +46,12 @@ function App() {
           <Route exact path = '/Register'>
             <NavBar/>
             <Register/>
+            <Footer/>
+          </Route>
+
+          <Route exact path = '/Exit'>
+            <NavBar/>
+            <Exit/>
             <Footer/>
           </Route>
 

@@ -1,42 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
-import {Link} from 'react-router-dom'
+import React, { useContext, useState } from 'react';
 import { getFireStore } from '../FireBase/index';
 import {CartContext} from '../context/CartContext'
 
 import './Register.css'
+import { BuyerContext } from '../context/BuyerContext';
 
 function Register() {
    
     const [name, setName] = useState()
     const [surname, setSurname] = useState()
     const [email, setEmail] = useState()
+    const [rEmail, setREmail] = useState()
     const [phone, setPhone] = useState()
     const [adress, setAdress] = useState()
-    const [orderId, setOrderId] = useState()
-    
-    const [items, setItems] = useState([])
 
     const cart = useContext(CartContext).cart
-    
+    const buyer = useContext(BuyerContext)
 
-    useEffect( () => {
-        const getData = async() =>
-        {
-            try{
-                const db = getFireStore()
-                const collection = db.collection('items')
-                const querySnapshot = await collection.get()
-                
-                setItems(querySnapshot.docs.map((doc) => doc.data()))
-                
-            } catch(e){
-                console.error('firestore error', e)
-            }
-        }
-        getData()
-    },[])
-
-
+    //check stock and quantity abeilable
     const canBuy = (stock, quantity) =>{
 
         if(stock >= quantity){
@@ -50,7 +31,7 @@ function Register() {
 
         const db = getFireStore()
         const batch = db.batch()
-
+        //Update sotck
         cart.forEach((element) => {
 
             const itemSelected = db.collection('items').doc(element.id)
@@ -63,7 +44,10 @@ function Register() {
             }
            
         });
-      
+
+        batch.commit()
+       
+        //Cargar la order a firestore
         db.collection('orders').add(
             {
                 buyer: {
@@ -76,14 +60,18 @@ function Register() {
                 cart
             }
         ).then((docRef) => {
-            console.log('document written with id: ', docRef.id)
+            alert('Su numero de pedido es ' + docRef.id)
+            //setBuyer
+            console.log(buyer)
+            buyer.setBuyer(name, surname, email, rEmail, phone, adress, docRef)
+           
             }
         ).catch((error) => {
             console.error("Error adding document: ", error);
         })
         
 
-        batch.commit()
+       
 
     }
 
@@ -102,6 +90,9 @@ function Register() {
                 <label for="email"><b>Correo Electronico</b></label>
                 <input type="text" placeholder="Ingrese su correo" onChange = {e => setEmail(e.target.value)}/>
 
+                <label for="email"><b>Repetir Correo Electronico</b></label>
+                <input type="text" placeholder="Ingrese nuevamente su correo" onChange = {e => setREmail(e.target.value)}/>
+
                 <label for="phone"><b>Numero de Celular</b></label>
                 <input type="text" placeholder="Ingrese su numero de celular" onChange = {e => setPhone(e.target.value)}/>
 
@@ -113,8 +104,9 @@ function Register() {
           
 
             <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-            <button type="submit" className="button" onClick = {handleSubmit}>
-                 Continuar al pago
+            <button type="submit" className="button" onClick = {handleSubmit} >
+               Continuar al pago
+                
                 
             </button>
         </div>

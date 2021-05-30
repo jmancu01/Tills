@@ -1,0 +1,39 @@
+@import '../css/theme.scss';
+
+
+.footerContainer{
+    z-index: 100;
+    background-color:rgb(228, 227, 227);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 10em;
+    width: 100%;
+    margin-top: 10px;
+    /* background: -webkit-linear-gradient(rgba(0, 0, 0, 0.267), rgba(214, 214, 214, 0.26)); */
+}
+.opciones{
+
+    align-items: center;
+    object-fit: cover;
+
+}
+
+.opciones ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.opciones ul li{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.opciones ul li {
+    font: $font-primary;
+    font-weight: 300;
+}
