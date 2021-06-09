@@ -59,21 +59,65 @@
   }
   .hide {
     display: none;
+    height: 4.2em;
+  }
+  .title{
+    display: flex;
+   
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 5em;
+  
   }
 
   @media only screen and (max-width : 960px) {
+
+  .title{
+    display: flex;
+    align-items: center;
+  }
+  .title button{
+    align-self: right;
+    border: none;
+    background: none;
+  }
     
   .navBar{
     flex-direction: column; 
     height:max-content;
+   
   }
-  .toggle{
+  .links{
+    
+    object-fit: cover;
+  
+  }
+  .not-rot{
     display: flex;
-    height: 4em;
+    height: 3em;
     width:auto;
+    color: grey;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg);
+    transition: .4s all;
   }
+  .rotate{
+    display: flex;
+    height: 3em;
+    width:auto;
+    color: grey;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg); 
+    -webkit-transform:rotate(0deg);
+    transition: .4s all;
+  }
+
   .hide{
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .links ul{

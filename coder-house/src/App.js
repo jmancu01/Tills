@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import Banner from './components/Banner.js';
+import Contacto from './components/Contacto';
 import CartView from './components/CartView.js'
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
@@ -9,7 +10,6 @@ import AllProducts from './components/Products/AllProducts';
 import Footer from './components/Footer';
 import CartContextProvider from './context/CartContext.js'
 import Register from './components/Register';
-import Exit from './components/Exit'
 
 function App() {
 
@@ -21,6 +21,12 @@ function App() {
           <Route exact path ='/'>
             <NavBar/>
             <Banner/>
+            
+            <Footer/>
+          </Route>
+          <Route exact path ='/Contact'>
+            <NavBar/>
+            <Contacto/>
             
             <Footer/>
           </Route>
@@ -46,12 +52,6 @@ function App() {
           <Route exact path = '/Register'>
             <NavBar/>
             <Register/>
-            <Footer/>
-          </Route>
-
-          <Route exact path = '/Exit'>
-            <NavBar/>
-            <Exit/>
             <Footer/>
           </Route>
 

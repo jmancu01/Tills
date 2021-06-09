@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;600&display=swap');
 
 .cart{
     height: 70%;
@@ -5,12 +6,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(226, 225, 225);
-    border: 2px solid #4d4f5017;
-    border-radius: 6px;
-    border-bottom: none;
-    background: -webkit-linear-gradient(rgb(226, 225, 225), rgba(214, 214, 214, 0.9));
+    transition: .4s all;
+}
+.cart :hover{
+    transform: scale(1.1);
     
+    transition: .4s all;
 }
 .cart-link{
     height: 70%;
@@ -29,7 +30,7 @@
 .cart-quantity{
     padding-right: 1.5em;
     font-size: 1.4em;
-    font-family: 'RocknRoll One', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
 @media only screen and (max-width : 960px) {

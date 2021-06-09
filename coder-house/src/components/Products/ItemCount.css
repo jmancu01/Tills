@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;600&display=swap');
+
+
 .counterContainer{
     background-color: rgba(252, 252, 252, 0.719);
     display: flex;
@@ -6,9 +9,8 @@
     flex-direction: row; 
     height: 4em;
     width: 100%;
-    border-bottom: black;
-    border: 2px solid #0099CC;
-    border-radius: 6px;
+    border-top: 1px solid grey ;
+   
 }
 .counter{
     display: flex;
@@ -17,14 +19,20 @@
     align-items: center;
     justify-content: center;
     margin:  0.3em 0.2em;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .addToCart{
-    color: #0099CC;
-    background: transparent;
-    border: 2px solid #0099CC;
-    border-radius: 6px;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    padding: 0.2em;
     margin: 0em 0.5em ;
     align-items: center;
     justify-content: center;
+}
+button{
+    border: none;
+    background: none;
 }

@@ -41,8 +41,7 @@ export const CartProvider = ({children}) => {
      
         let newProduct = Object.defineProperty(product, 'quantity', {value: number})
         setCart([...cart,  newProduct])
-        console.log(number)
-        console.log(newProduct)
+       
     }
 
     const rmCart = (id) =>{

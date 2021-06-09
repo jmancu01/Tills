@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext} from 'react'
 import { CartContext } from '../../context/CartContext'
 import './ItemCount.css'
+import minus from '../../imagenes/minus.png'
+import plus from '../../imagenes/plus.png'
 
 function ItemCount (props){
     
     const[counter, setCounter] = useState(props.counter)
     const[stock, setStock] = useState(props.stock)
+    const[added, setAdded] = useState(false)
     const cart = useContext(CartContext)
    
     //asignar props a los estados
@@ -39,6 +42,7 @@ function ItemCount (props){
             
             cart.addToCart(props.product, counter)
             console.log(counter)
+            setAdded(true)
         }else{
             console.log('error')
         }
@@ -46,22 +50,22 @@ function ItemCount (props){
     }
 
     return (
-
+        <div>
         <div className = 'counterContainer'>
             <button 
-                className='addToCart' 
+               
                 onClick={restando} 
              >
-                -
+                <img alt='cart' src={minus} className= 'icon'/>
             </button>
             <h5 className='counter'>
                 {counter}
             </h5>
             <button 
-                className='addToCart'
+               
                 onClick={sumando} 
               >
-                +
+                  <img alt='cart' src={plus} className= 'icon'/>
             </button>
             <div>
                 <button 
@@ -71,7 +75,11 @@ function ItemCount (props){
                     Add to Cart
                 </button>
             </div>
-           
+            <br></br>
+            
+            
+        </div>
+        {added ? (<p>Agregado al carrito</p>):(<br></br>)}
         </div>
     )
 }

@@ -6,9 +6,10 @@
 }
 
 .BarContainer input{
-    width: 20%;
+    width: 600px;
    
     padding: 5px;
+    margin: 2px;
     background-color: white;
     border: 2px solid black;
     color: #111;
@@ -19,4 +20,10 @@
     font-family: 'Knewave', cursive;
     letter-spacing: 2px;
    
+}
+@media only screen and (max-width : 700px) {
+    
+    .BarContainer input{
+        width: 300px;
+    }
 }

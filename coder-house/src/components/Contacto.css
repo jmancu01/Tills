@@ -1,16 +1,20 @@
-.registerContainer{
+.contactContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.forms{
+.form{
     display: flex;
     flex-direction: column;
     
 }
-input{
+label{
+    
+    margin: 12px;
+}
+.input-holder{
     display: block;
     padding: 12px;
     width: 100%;
@@ -20,4 +24,7 @@ input{
     color: #000000;
     background-color: #ffffff;
    
+}
+.button{
+    margin: 6px;
 }

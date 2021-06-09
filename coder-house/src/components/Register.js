@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { getFireStore } from '../FireBase/index';
 import {CartContext} from '../context/CartContext'
-
 import './Register.css'
-import { BuyerContext } from '../context/BuyerContext';
+
 
 function Register() {
    
@@ -15,7 +14,8 @@ function Register() {
     const [adress, setAdress] = useState()
 
     const cart = useContext(CartContext).cart
-    const buyer = useContext(BuyerContext)
+
+    const [hasFinish, setHasFinish] = useState(false)
 
     //check stock and quantity abeilable
     const canBuy = (stock, quantity) =>{
@@ -61,9 +61,9 @@ function Register() {
             }
         ).then((docRef) => {
             alert('Su numero de pedido es ' + docRef.id)
-            //setBuyer
-            console.log(buyer)
-            buyer.setBuyer(name, surname, email, rEmail, phone, adress, docRef)
+            
+            setHasFinish(true)
+           
            
             }
         ).catch((error) => {
@@ -74,42 +74,59 @@ function Register() {
        
 
     }
-
+    
     return (
-        <div className = 'registerContainer'>
-            <h1>Registro</h1>
-            <p>Por favor complete todos los campos para poder continuar con la compra</p>
-            
-            <div className = 'forms'>
-                <label for="name"><b>Nombre</b></label>
-                <input type="text" placeholder="Ingrese su nombre" onChange = {e => setName(e.target.value)}/>
-
-                <label for="surname"><b>Apellido</b></label>
-                <input type="text" placeholder="Ingrese su apellido" onChange = {e => setSurname(e.target.value)}/>
-
-                <label for="email"><b>Correo Electronico</b></label>
-                <input type="text" placeholder="Ingrese su correo" onChange = {e => setEmail(e.target.value)}/>
-
-                <label for="email"><b>Repetir Correo Electronico</b></label>
-                <input type="text" placeholder="Ingrese nuevamente su correo" onChange = {e => setREmail(e.target.value)}/>
-
-                <label for="phone"><b>Numero de Celular</b></label>
-                <input type="text" placeholder="Ingrese su numero de celular" onChange = {e => setPhone(e.target.value)}/>
-
-                <label for="adress"><b>Direccion</b></label>
-                <input type="text" placeholder="Ingrese su direccion" onChange = {e => setAdress(e.target.value)}/>
-
+        hasFinish ? (
+            <div>
+                <h1>{name} {surname}</h1>
+                <h1>{email}</h1>
+                <h1>{adress}</h1>
+                <div>
+                    {cart.map( (item) =>
+                        <div className = 'ItemContainer'>    
+                            <img alt= {item.title} src= {item.image} className ='img'/>
+                            <div className ='infoCartContainer'>
+                                <h2>{item.title}</h2>
+                                <h4>${item.price}</h4>
+                            
+                                <h4>Estas llevando {item.quantity} {item.title} en tu carrito</h4>
+                            </div>
+                        </div>      
+                    )}
+                </div>
             </div>
-           
-          
-
-            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-            <button type="submit" className="button" onClick = {handleSubmit} >
-               Continuar al pago
+        ):
+        (
+            <div className = 'registerContainer'>
+                <h1>Registro</h1>
+                <p>Por favor complete todos los campos para poder continuar con la compra</p>
                 
-                
-            </button>
-        </div>
+                <div className = 'forms'>
+                    <label for="name"><b>Nombre</b></label>
+                    <input type="text" placeholder="Ingrese su nombre" onChange = {e => setName(e.target.value)}/>
+    
+                    <label for="surname"><b>Apellido</b></label>
+                    <input type="text" placeholder="Ingrese su apellido" onChange = {e => setSurname(e.target.value)}/>
+    
+                    <label for="email"><b>Correo Electronico</b></label>
+                    <input type="text" placeholder="Ingrese su correo" onChange = {e => setEmail(e.target.value)}/>
+    
+                    <label for="email"><b>Repetir Correo Electronico</b></label>
+                    <input type="text" placeholder="Ingrese nuevamente su correo" onChange = {e => setREmail(e.target.value)}/>
+    
+                    <label for="phone"><b>Numero de Celular</b></label>
+                    <input type="text" placeholder="Ingrese su numero de celular" onChange = {e => setPhone(e.target.value)}/>
+    
+                    <label for="adress"><b>Direccion</b></label>
+                    <input type="text" placeholder="Ingrese su direccion" onChange = {e => setAdress(e.target.value)}/>
+    
+                </div>
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                <button type="submit" className="button" onClick = {handleSubmit} >       
+                   Continuar al pago          
+                </button>
+            </div>
+            )
     )
     
 }
