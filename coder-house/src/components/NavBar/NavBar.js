@@ -1,6 +1,6 @@
 import './NavBar.css'
 import  React,{useContext, useState} from 'react';
-import logo from '../../imagenes/logo.png'
+import logo from '../../imagenes/logoJM.png'
 import toggle from '../../imagenes/toggle.svg'
 import CartWidget from './CartWidget'
 import { CartContext } from '../../context/CartContext.js';
@@ -18,10 +18,8 @@ function NavBar(props) {
                 setRotate('not-rot')
             }else{
                 setRotate('rotate')
-            }
-           
+            }    
         }
-        
 
         return (
 
