@@ -1,6 +1,6 @@
 import './NavBar.css'
 import  React,{useContext, useState} from 'react';
-import logo from '../../imagenes/logoJM.png'
+import logo from '../../imagenes/logo.png'
 import toggle from '../../imagenes/toggle.svg'
 import CartWidget from './CartWidget'
 import { CartContext } from '../../context/CartContext.js';
@@ -26,7 +26,7 @@ function NavBar(props) {
         <div>             
             <nav className='navBar'>
                 <div className = 'title'>
-                    <button onClick={() => ToggleButon()} className = 'hide'><img className = {rotate} src = {toggle}/></button>
+                    <button onClick={() => ToggleButon()} className = 'hide'><img className = {rotate} src = {toggle} alt='rotate'/></button>
                     <img alt='TillsLogo'src={logo} className='logo'/>   
                     <CartWidget className='icon' totalCounter = {productsCount}/>
                 </div>

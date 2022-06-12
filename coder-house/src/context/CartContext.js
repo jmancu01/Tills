@@ -11,10 +11,7 @@ export const CartProvider = ({children}) => {
 
 
     useEffect(() => {
-
         setQuantity(cart.length)
-       
-
     },[cart])
 
     const getTotalPrice = () =>{
@@ -33,7 +30,6 @@ export const CartProvider = ({children}) => {
         for(var i = 0; i < arr.length; i++){
             total = total + arr[i];
         }
-
         setTotalPrice(total)
     }
 

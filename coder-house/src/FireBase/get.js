@@ -9,11 +9,8 @@ export const getCollection = (collectionName) =>{
     itemCollection
         .get()
         .then(
-            (querySnapshot) => {
-                
+           (querySnapshot) => {     
                 data = querySnapshot.docs.map((doc) => doc.data())
-               
-                
             } 
         )
         .catch((e)=> console.error('firestone ', e))

@@ -35,25 +35,20 @@ function ItemCount (props){
        
     }
     
-    function onAdd(){
-
-        
-        if(counter > 0){
-            
+    function onAdd(){     
+        if(counter > 0){   
             cart.addToCart(props.product, counter)
             console.log(counter)
             setAdded(true)
         }else{
             console.log('error')
-        }
-        
+        }  
     }
 
     return (
         <div>
         <div className = 'counterContainer'>
-            <button 
-               
+            <button    
                 onClick={restando} 
              >
                 <img alt='cart' src={minus} className= 'icon'/>
@@ -62,9 +57,8 @@ function ItemCount (props){
                 {counter}
             </h5>
             <button 
-               
                 onClick={sumando} 
-              >
+            >
                   <img alt='cart' src={plus} className= 'icon'/>
             </button>
             <div>
